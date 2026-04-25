@@ -72,9 +72,9 @@ O salto qualitativo entre as duas abordagens fica evidente na diagonal principal
 ```text
 📦 ProjectCSS
  ┣ 📂 Classificador_Baseline
- ┃ ┗ 📜 baseline.py           # ML Tradicional: MFCC + Random Forest
+ ┃ ┗ 📜 Baseline.py           # ML Tradicional: MFCC + Random Forest
  ┣ 📂 Classificador_Pipeline
- ┃ ┣ 📜 dataset.py            # Geração de Espectrogramas e Data Augmentation
+ ┃ ┣ 📜 Dataset.py            # Geração de Espectrogramas e Data Augmentation
  ┃ ┣ 📜 Model.py              # Treinamento da ResNet50 no PyTorch
  ┃ ┗ 📜 Classificate.py       # Script de inferência carregando os pesos (.pth)
  ┣ 📂 DataImages              # Imagens dos gráficos, métricas e espectrogramas gerados
@@ -101,7 +101,7 @@ pip install torch torchvision torchaudio librosa scikit-learn numpy pandas matpl
 
  3. Gere o Dataset em Imagens (Nota: O script solicitará o diretório do dataset IRMAS original)
 ```bsh
-python Classificador_Pipeline/dataset.py
+python Classificador_Pipeline/Dataset.py
 ```
 
  4. Treine o Modelo ResNet50
@@ -113,7 +113,7 @@ python Classificador_Pipeline/Model.py
 - Para rodar o modelo Clássico:
 
 ```bash
-python Classificador_Baseline/baseline.py
+python Classificador_Baseline/Baseline.py
 ```
 - Para rodar o modelo de Robusto:
 ```bash
