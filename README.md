@@ -53,7 +53,7 @@ A evolução das funções de perda (_Loss_) e de acurácia demostram um aprendi
 ![Evolução do Treinamento](DataImages/GráficoComparativoAcurácias.png)
 
 ### 4. Desempenho do Treinamento - _RandomForest_
-a alta acurácia de treino e a mediana acurácia de válidação comprovam que o modelo sofreu _overfitting_. Ou seja, o modelo decorou os dados de treino, expondo sua incapacidade efetiva de generalizar os sinais de áudio e evidenciando a necessidade de aprendizado profundo para a classificação dos instrumentos. 
+A alta acurácia de treino e a mediana acurácia de válidação comprovam que o modelo sofreu _overfitting_. Ou seja, o modelo decorou os dados de treino, expondo sua incapacidade efetiva de generalizar os sinais de áudio e evidenciando a necessidade de aprendizado profundo para a classificação dos instrumentos. 
 
 ![Métricas do Treinamento](DataImages/AcuráciaBaseline.png)
 
