@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     data_path = "./dataset_instrumentos"
     if not os.path.exists(data_path):
-        print(f"ERRO: Pasta do dataset '{data_path}' não encontrada. Abortando.")
+        print(f"ERRO: Pasta do dataset '{data_path}' não encontrada.")
         exit()
 
     print(f"Usando dataset em: {data_path}")
@@ -106,7 +106,7 @@ if __name__ == '__main__':
     optimizer = optim.AdamW(params_to_update, lr=0.001, weight_decay=1e-3)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=2)
 
-    print(f"\nIniciando treinamento por {NUM_EPOCHS} épocas...")
+    print(f"\nIniciando treinamento por {NUM_EPOCHS} épocas")
     best_acc = 0.0
 
     history = {
@@ -119,14 +119,13 @@ if __name__ == '__main__':
     for epoch in range(NUM_EPOCHS):
 
         if epoch == EPOCA_DESCONGELAMENTO:
-            print(f"\n[!] Época {epoch+1}: Descongelando layer3 e layer4 para Fine-Tuning profundo...")
+            print(f"\n[!] Época {epoch+1}: Descongelando layer3 e layer4 para Fine-Tuning profundo")
 
             for name, param in model.resnet.named_parameters():
                 if "layer4" in name or "layer3" in name or "layer2" in name:
                     param.requires_grad = True
 
             params_to_update = [param for param in model.parameters() if param.requires_grad]
-            # LR alterado de 1e-5 para 1e-4
             optimizer = optim.AdamW(params_to_update, lr=1e-4, weight_decay=1e-4)
             scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=2)
 
@@ -216,7 +215,7 @@ if __name__ == '__main__':
     print("\nTreinamento concluído.")
 
     if test_loader:
-        print("\nGerando gráficos e métricas de desempenho final...")
+        print("\nGerando gráficos e métricas de desempenho final")
 
         plt.figure(figsize=(14, 5))
 
