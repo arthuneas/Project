@@ -47,7 +47,6 @@ def salvar_espectrograma_consistente(y, sr, caminho_saida):
     if np.abs(y).max() == 0:
         return
     
-    # Limitar o fmax a 8000Hz concentra os 224 bins nas frequências que importam
     S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=224, fmax=8000, hop_length=512)
     S_db = librosa.power_to_db(S, ref=np.max)
     
